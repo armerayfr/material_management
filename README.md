@@ -77,3 +77,40 @@ curl -X POST http://localhost:8014/web/session/authenticate \
       "password": "admin"
     }
 }'
+
+## 🔗 Material API Endpoints (cURL)
+
+### 1. 📋 List Materials
+
+```bash
+curl -X GET http://localhost:8014/material_registry/materials \
+     -H "Content-Type: application/json"
+
+
+
+### 2. ➕ Create Material
+```bash
+curl -X POST http://localhost:8014/material_registry/materials \
+     -H "Content-Type: application/json" \
+     -d '{
+           "name": "Material A",
+           "code": "MAT-A",
+           "category": "Raw Material"
+         }'
+
+### 3. ✏️ Update Material
+```bash
+curl -X PUT http://localhost:8014/material_registry/materials/1 \
+     -H "Content-Type: application/json" \
+     -d '{
+           "name": "Material A (Updated)",
+           "category": "Semi-Finished"
+         }'
+🆔 Gantilah 1 pada URL dengan id material yang ingin diupdate
+
+### 4. 🗑️ Delete Material
+```bash
+curl -X DELETE http://localhost:8014/material_registry/materials/1 \
+     -H "Content-Type: application/json"
+
+🆔 Gantilah 1 dengan id material yang ingin dihapus.

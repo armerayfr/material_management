@@ -1,6 +1,6 @@
-# Ignore everything in addons and enterprise
-addons/*
-enterprise/*
+# # Ignore everything in addons and enterprise
+# addons/*
+# enterprise/*
 
 # Allow core Odoo files to be tracked
 !addons/**/__init__.py
