@@ -1,0 +1,28 @@
+version: '3.1'
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "5684:5680"
+      - "8014:8069"
+    volumes:
+      - "./config:/etc/odoo"
+      - "./enterprise:/mnt/extra-addons/enterprise"
+      - "./IMM:/mnt/extra-addons/IMM"
+      - odoo-web-data-14:/var/lib/odoo
+  db:
+    image: postgres:12
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_USER=odoo14
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data_14:/var/lib/postgresql/data/pgdata
+    ports:
+      - "5431:5432"
+volumes:
+  odoo-web-data-14:
+  odoo-db-data_14:
