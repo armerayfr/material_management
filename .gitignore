@@ -1,0 +1,28 @@
+# Ignore everything in addons and enterprise
+addons/*
+enterprise/*
+
+# Allow core Odoo files to be tracked
+!addons/**/__init__.py
+!addons/**/__manifest__.py
+!addons/**/*.py
+!addons/**/*.xml
+
+!enterprise/**/__init__.py
+!enterprise/**/__manifest__.py
+!enterprise/**/*.py
+!enterprise/**/*.xml
+
+# Ignore compiled Python files and editor swap files
+**/__pycache__/
+**/*.py[cod]
+**/*~
+**/*.swp
+**/*.swo
+
+# Ignore Zone.Identifier files (usually from Windows)
+**/*:Zone.Identifier
+
+# Ignore system and metadata files
+.DS_Store
+Thumbs.db
